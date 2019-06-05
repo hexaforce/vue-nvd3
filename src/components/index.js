@@ -14,5 +14,5 @@ export default (Vue, options) => {
   Vue.component('vn-hbar', HGBarChart)
   Vue.component('vn-bar', BarChart)
   Vue.component('vn-bubble', BubbleChart)
-  Vue.component('vn-stacked-area',StackedAreaChart)
+  Vue.component('vn-stacked-area', StackedAreaChart)
 }

@@ -9,14 +9,31 @@ export default {
   name: 'HBarChart',
   mixins: [BaseChartMixin],
   props: {
-    textField: {type: String, default: 'label'},
-    valueField: {type: String, default: 'value'},
-    yFormat: {type: [Function, String]},
-    height: {type: Number, default: 350},
-    showControls: {type: Boolean, default: true},
-    colors: {type: Array, default: () => ['#82DFD6', '#ddd']}
+    textField: {
+      type: String,
+      default: 'label'
+    },
+    valueField: {
+      type: String,
+      default: 'value'
+    },
+    yFormat: {
+      type: [Function, String]
+    },
+    height: {
+      type: Number,
+      default: 350
+    },
+    showControls: {
+      type: Boolean,
+      default: true
+    },
+    colors: {
+      type: Array,
+      default: () => ['#82DFD6', '#ddd']
+    }
   },
-  mounted () {
+  mounted() {
     nv.addGraph(() => {
       const textField = this.textField
       const valField = this.valueField
@@ -32,7 +49,7 @@ export default {
           'stacked': '堆叠'
         })
         .color(this.colors)
-        .showValues(true)           //Show bar value next to each bar.
+        .showValues(true) //Show bar value next to each bar.
       //.tooltips(true)             //Show tooltips on hover.
       //.transitionDuration(350)
       //.showControls(true)       //Allow user to switch between "Grouped" and "Stacked" mode.
@@ -42,7 +59,7 @@ export default {
       }
 
       if (this.yFormat) {
-        if (typeof(this.yFormat) === 'string') {
+        if (typeof (this.yFormat) === 'string') {
           chart.yAxis.tickFormat(d3.format(this.yFormat))
         } else {
           chart.yAxis.tickFormat(this.yFormat)
