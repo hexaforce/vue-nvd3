@@ -31,8 +31,6 @@ export default {
     }
   },
   render(h) {
-    return <svg ref = "chart" >
-      <
-      /svg>
+    return <svg ref = "chart" ></svg>
   }
 }
